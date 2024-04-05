@@ -1,0 +1,19 @@
+name: Check Tickets
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # 每5分钟检查一次票务
+
+jobs:
+  check_tickets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check Tickets
+        uses: mooyoul/melon-ticket-actions@v1.1.0
+        with:
+          product-id: 209657  # 替换为您想要检查的产品ID
+          schedule-id: 100001  # 替换为您想要检查的排期ID
+          seat-id: 1_0  # 替换为您想要检查的座位ID
+          slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}  # 您的Slack Webhook URL          
+          message: '<@U12345678> 달려달려~'  # 您想要发送到Slack的消息
