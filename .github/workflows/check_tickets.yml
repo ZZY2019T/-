@@ -13,7 +13,7 @@ jobs:
         uses: mooyoul/melon-ticket-actions@v1.1.0
         with:
           product-id: 209657  # 替换为您想要检查的产品ID
-          schedule-id: 100001  # 替换为您想要检查的排期ID
+          schedule-id: 240504  # 替换为您想要检查的排期ID
           seat-id: 1_0  # 替换为您想要检查的座位ID
           slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}  # 您的Slack Webhook URL          
           message: '<@U12345678> 달려달려~'  # 您想要发送到Slack的消息
